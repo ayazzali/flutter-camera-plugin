@@ -1,0 +1,19 @@
+apply plugin: 'com.android.application'
+apply plugin: 'flutter'
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion '25.0.0'
+
+    lintOptions {
+        disable 'InvalidPackage'
+    }
+
+    dependencies {
+        compile "com.android.support:support-core-utils:25.0.1"
+    }
+}
+
+flutter {
+    source '../..'
+}

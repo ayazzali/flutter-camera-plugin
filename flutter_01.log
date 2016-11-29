@@ -1,0 +1,83 @@
+Flutter crash report; please file at https://github.com/flutter/flutter/issues.
+
+## command
+
+flutter daemon
+
+## exception
+
+FileSystemException: writeFrom failed, path = '' (OS Error: Broken pipe, errno = 32)
+
+```
+dart:io                                                           _StdSink.writeln
+package:flutter_tools/executable.dart 127                         main.<async>.<fn>
+===== asynchronous gap ===========================
+dart:io                                                           _StdSink.writeln
+package:flutter_tools/executable.dart 127                         main.<async>.<fn>
+===== asynchronous gap ===========================
+dart:io                                                           _StdSink.writeln
+package:flutter_tools/src/base/logger.dart 57                     StdoutLogger.printError
+package:flutter_tools/src/globals.dart 26                         printError
+package:flutter_tools/src/commands/daemon.dart 68                 DaemonCommand._handleError
+dart:async                                                        _Completer.completeError
+package:flutter_tools/src/base/context.dart 80                    AppContext._run.<async>
+dart:async                                                        _Completer.completeError
+package:flutter_tools/src/commands/daemon.dart 64                 DaemonCommand.runCommand.<fn>.<async>
+===== asynchronous gap ===========================
+dart:async                                                        _asyncErrorWrapperHelper
+package:flutter_tools/src/base/context.dart                       AppContext._run
+package:flutter_tools/src/base/context.dart 66                    AppContext.runInZone.<fn>
+dart:async                                                        runZoned
+package:flutter_tools/src/base/context.dart 65                    AppContext.runInZone
+package:flutter_tools/src/commands/daemon.dart 55                 DaemonCommand.runCommand
+package:flutter_tools/src/runner/flutter_command.dart 147         FlutterCommand.verifyThenRunCommand.<async>
+dart:async                                                        _SyncCompleter.complete
+package:flutter_tools/src/cache.dart 187                          Cache.updateAll.<async>
+===== asynchronous gap ===========================
+dart:async                                                        _asyncThenWrapperHelper
+package:flutter_tools/src/runner/flutter_command.dart             FlutterCommand.verifyThenRunCommand
+package:flutter_tools/src/runner/flutter_command.dart 117         FlutterCommand.run
+package:args/command_runner.dart 183                              CommandRunner.runCommand.<fn>
+dart:async                                                        Future.Future.sync
+package:args/command_runner.dart 136                              CommandRunner.runCommand
+package:flutter_tools/src/runner/flutter_command_runner.dart 182  FlutterCommandRunner.runCommand.<async>
+dart:async                                                        _SyncCompleter.complete
+package:flutter_tools/src/cache.dart 72                           Cache.lock.<async>
+===== asynchronous gap ===========================
+dart:async                                                        _asyncThenWrapperHelper
+package:flutter_tools/src/runner/flutter_command_runner.dart      FlutterCommandRunner.runCommand
+package:args/command_runner.dart 105                              CommandRunner.run.<fn>
+dart:async                                                        Future.Future.sync
+package:args/command_runner.dart 105                              CommandRunner.run
+package:flutter_tools/src/runner/flutter_command_runner.dart 132  FlutterCommandRunner.run
+package:flutter_tools/executable.dart 97                          main.<async>.<fn>.<async>
+===== asynchronous gap ===========================
+package:stack_trace                                               Chain.capture
+package:flutter_tools/executable.dart 84                          main.<async>
+```
+
+## flutter doctor
+
+```
+[✓] Flutter (on Mac OS, channel master)
+    • Flutter at /Users/FaisalAbid/Development/workspace/Verve/FlutterCrossover/flutter
+    • Framework revision e384c0d982 (24 hours ago), 2016-11-13 22:09:03
+    • Engine revision 84a060820a
+    • Tools Dart version 1.21.0-dev.3.0
+
+[✓] Android toolchain - develop for Android devices (Android SDK 25.0.0)
+    • Android SDK at /Users/FaisalAbid/Library/Android/sdk
+    • Platform android-25, build-tools 25.0.0
+    • Java(TM) SE Runtime Environment (build 1.8.0_91-b14)
+
+[✓] iOS toolchain - develop for iOS devices (Xcode 8.1)
+    • XCode at /Applications/Xcode.app/Contents/Developer
+    • Xcode 8.1, Build version 8B62
+
+[✓] IntelliJ IDEA Ultimate Edition (version 2016.2.5)
+    • Dart plugin installed
+    • Flutter plugin installed
+
+[✓] Connected devices
+    • None
+```

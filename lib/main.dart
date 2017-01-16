@@ -49,7 +49,7 @@ class _HelloServicesState extends State<HelloServices> {
   }
 
   Future<Null> _takePicture() async {
-    String reply = await HostMessages.sendToHost('takePictureAndSend');
+    String reply = await PlatformMessages.sendString('takePictureAndSend','');
 
     setState((){
       filepath = reply;

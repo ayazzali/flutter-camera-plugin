@@ -3,7 +3,7 @@ apply plugin: 'flutter'
 
 android {
     compileSdkVersion 25
-    buildToolsVersion '25.0.0'
+    buildToolsVersion '25.0.2'
 
     lintOptions {
         disable 'InvalidPackage'
